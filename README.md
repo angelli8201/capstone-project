@@ -33,3 +33,9 @@ themeId, name
 TABLE 4- newsPost
 postId, title, caption, date
 
+-Create database tables and data
+-Create Models,service, and data layer for each model
+-Test each layer
+-Create pages for each framwork in UI Framework models.
+-Look into tailwind
+-Look into React Stripe
