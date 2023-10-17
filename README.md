@@ -1,6 +1,6 @@
 # capstone-project
 
-As a casual Lego enjoyer, I want to search for products so I can find something I might be interested in purchasing. In the 85+ years that LEGO has been running, they have released over 15,000 sets. With sets coming and in and out of rotation every year, I want to see a wide collection of new, popular, and even rare sets for sale. For my project, I want to build an e-comm app. The business model would be on Legos. The design of the store would be very colorful and nostalgic. I would create product pages with detailed product listings with descriptions, images, and prices. As a user, I want to add a product to my cart, so I may purchase it later. The cart should display current items added, in addition to the cart total. In addition, I would like to create a Lego news section, talking about what recent events the company has done. My learning goal is to look into React Stripe to mimic checkout and payment flow.
+As a casual Lego enjoyer, I want to search for products so I can find something I might be interested in purchasing. In the 85+ years that LEGO has been running, they have released over 15,000 sets. With sets coming and in and out of rotation every year, I want to see a wide collection of new, popular, and even rare sets for sale. For my project, I want to build an e-comm app. The business model would be on Legos. The design of the store would be very colorful and nostalgic. I would create product pages with detailed product listings with descriptions, images, and prices. As a user, I want to add a product to my cart, so I may purchase it later. The cart should display current items added, in addition to the cart total. In addition, I would like to create a Lego news section, talking about what recent events the company has done. My learning goal is to look into React Stripe to mimic checkout and payment flow. In addition, I want to implement Framer Motion for react animations.
 
 Database
 - legoSet
@@ -33,9 +33,38 @@ themeId, name
 TABLE 4- newsPost
 postId, title, caption, date
 
--Create database tables and data
--Create Models,service, and data layer for each model
--Test each layer
--Create pages for each framwork in UI Framework models.
--Look into tailwind
--Look into React Stripe
+
+
+Monday
+-models,data layer, domain layer (2.5 hour)
+-create tables in MYSQL and populate with data (2.5 hours)
+-testing (1 hour)
+
+
+Tuesday
+-finish up testing (1hour)
+-make controllers (1hour)
+-setup frontend(routing, pages, components) (2hours)
+-research into tailwind/framer motion/react stripe (2hours)
+
+
+Wednesday
+-complete landing/home page (1.5 hour)
+-complete themes page (1.5hour)
+-complete news page (1.5hour)
+
+
+
+Thursday
+-complete all things lego page (2 hours)
+-complete minifigures page (2hours)
+-complete cart summary process (1.5 hour)
+
+Friday
+-look into react stripe and implement it for payment page. mimic checkout process (1.5 hours)
+-look into framer motion and add react animations to pages (4 hours)
+
+
+
+
+
