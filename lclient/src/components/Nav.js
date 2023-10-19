@@ -1,5 +1,12 @@
 import { Link } from 'react-router-dom';
 import logo from "../images/LEGO_logo.svg.png";
+import { Modal, ModalHeader } from 'react-bootstrap';
+import { useState, useContext } from 'react';
+import { CartContext } from '../CartContext';
+import CartProducts from './CartProducts';
+import { getSetData } from '../App';
+
+
 
 function Nav() {
     const linkStyle = {
@@ -9,6 +16,14 @@ function Nav() {
         marginRight: '20px',
         
     };
+    
+
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    const cart = useContext(CartContext);
+
+    const productsCount = cart.items.reduce((sum,product) => sum + product.amount,0);
 
     return (
         <div className="d-flex justify-content-around">
@@ -47,15 +62,36 @@ function Nav() {
                 </li>
                 
                 <li className='nav-item'>
-                    <Link className='nav-link' to='/'>
-                    <img
-						width='30'
-						alt='Shopping cart'
-						src='https://www.freepnglogos.com/uploads/shopping-cart-png/shopping-cart-svg-png-icon-download-28.png'
-					/>
-                    </Link>
+                    <button onClick = {handleShow}style= {{background: 'transparent', border: 'none'}}>
+                        <Link className='nav-link' to='/' style={{ color: 'black' }}>
+                        <img
+                            width='30'
+                            alt='Shopping cart'
+                            src='https://www.freepnglogos.com/uploads/shopping-cart-png/shopping-cart-svg-png-icon-download-28.png'
+                        />
+                        &nbsp;&nbsp; ({productsCount} Items)
+                        </Link>
+                    </button>
                 </li>
             </ul>
+            <Modal show = {show} onHide = {handleClose}>
+                <ModalHeader closeButton>
+                    <Modal.Title>Shopping Summary</Modal.Title>
+                </ModalHeader>
+                <Modal.Body>
+                    {productsCount > 0 ? 
+                    <>
+                    <p>Items in your cart:</p>
+                    {cart.items.map((currentProduct,idx) =>(
+                        <h1>Products</h1>
+                    ) )}
+                    <h1>Total: {cart.getTotalCost()}</h1>
+                    </>
+                    :
+                    <h1>Your shopping cart is empty!</h1>
+                    }
+                    </Modal.Body>
+            </Modal>
         </div>
     );
 }
