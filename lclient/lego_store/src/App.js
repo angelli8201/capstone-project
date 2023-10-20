@@ -71,7 +71,6 @@ function App() {
           <Route path = "/" element = {<Landing/>}/>
           <Route path = "/themes" element = {<Themes/>}/>
           <Route path = "/legos" element = {<Legos legos = {legos} getSetData={getSetData}/>}/>
-          <Route path = "/news" element = {<News/>}/>
           <Route path = "/figures" element = {<Figures/>}/>
           <Route path = "/success" element = {<Success/>}/>
           <Route path = "/cancel" element = {<Cancel/>}/>

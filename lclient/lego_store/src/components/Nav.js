@@ -68,12 +68,7 @@ function Nav() {
                         Lego Mini Figures
                     </Link>
                 </li>
-                <li className='nav-item'>
-                    <Link style={linkStyle} className='nav-link' to='/news'>
-                        Lego News
-                    </Link>
-                </li>
-                
+               
                 <li className='nav-item'>
                     <button onClick = {handleShow}style= {{background: 'transparent', border: 'none'}}>
                         <Link className='nav-link' style={{ color: 'black' }}>

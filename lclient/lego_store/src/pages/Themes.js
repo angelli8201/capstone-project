@@ -25,6 +25,7 @@ function Themes() {
     }, []);
 
     return (
+        <>
         <div className="container">
             <Row>
                 {themes.map(theme => (
@@ -40,6 +41,18 @@ function Themes() {
                 ))}
             </Row>
         </div>
+        <div className='d-flex justify-content-center'>
+        <Row>
+        <Col>
+            <iframe src="https://giphy.com/embed/h2CN7TlrNWxBCyUSqk" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            <iframe src="https://giphy.com/embed/9M1ryc3kRpXlLXE0Ro" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            <iframe src="https://giphy.com/embed/CFtz69Qh8eBsrIC9kf" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            </Col>
+        </Row>
+           
+        </div>
+        </>
+        
     );
 }
 
