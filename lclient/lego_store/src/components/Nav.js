@@ -4,7 +4,6 @@ import { Modal, ModalHeader } from 'react-bootstrap';
 import { useState, useContext } from 'react';
 import { CartContext } from '../CartContext';
 import CartProducts from './CartProducts';
-import { getSetData } from '../App';
 
 
 
@@ -16,7 +15,21 @@ function Nav() {
         marginRight: '20px',
         
     };
-    
+    const checkout = async() => {
+        await fetch('http://localhost:4000/create-checkout-session',{
+            method:"POST",
+            headers : {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({items: cart.items})
+        }).then((response) => {
+            return response.json();
+        }).then((response) => {
+            if(response.url){
+                window.location.assign(response.url);
+            }
+        })
+    }
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -63,7 +76,7 @@ function Nav() {
                 
                 <li className='nav-item'>
                     <button onClick = {handleShow}style= {{background: 'transparent', border: 'none'}}>
-                        <Link className='nav-link' to='/' style={{ color: 'black' }}>
+                        <Link className='nav-link' style={{ color: 'black' }}>
                         <img
                             width='30'
                             alt='Shopping cart'
@@ -83,9 +96,10 @@ function Nav() {
                     <>
                     <p>Items in your cart:</p>
                     {cart.items.map((currentProduct,idx) =>(
-                        <h1>Products</h1>
+                        <CartProducts key={idx} legoSetId= {currentProduct.legoSetId} amount = {currentProduct.amount}></CartProducts>
                     ) )}
-                    <h1>Total: {cart.getTotalCost()}</h1>
+                    <h1>Total: {cart.getTotalCost().toFixed(2)}</h1>
+                    <button type="button" className="btn btn-success" onClick= {checkout}> Checkout</button>
                     </>
                     :
                     <h1>Your shopping cart is empty!</h1>

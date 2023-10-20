@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface LegoSetRepository {
     List<LegoSet> findAll();
-    LegoSet findById(int setId);
+    LegoSet findById(String setId);
     
 }

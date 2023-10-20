@@ -17,7 +17,7 @@ public class LegoSetService {
         return repository.findAll();
     }
 
-    public LegoSet findById(int setId){
+    public LegoSet findById(String setId){
         return repository.findById(setId);
     }
 

@@ -12,7 +12,7 @@ public class LegoSetMapper implements RowMapper<LegoSet> {
     @Override
     public LegoSet mapRow(ResultSet resultSet, int i) throws SQLException {
         LegoSet legoSet = new LegoSet();
-        legoSet.setLegoSetId(resultSet.getInt("set_id"));
+        legoSet.setLegoSetId(resultSet.getString("set_id"));
         legoSet.setSetName(resultSet.getString("set_name"));
         legoSet.setAmountOfPieces(resultSet.getInt("pieces"));
         legoSet.setPrice(resultSet.getDouble("price"));

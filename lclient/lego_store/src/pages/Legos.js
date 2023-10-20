@@ -43,14 +43,14 @@ function Legos({legos, getSetData}) {
                     {cart.getProductAmount(lego.legoSetId) > 0 ?
                       <>
                       <Form as ={Row}>
-                        <Form.Label column = "true" sm="6">In Cart: {lego.legoSetId}</Form.Label>
+                        <Form.Label column = "true" sm="6">In Cart</Form.Label>
                         <Col sm="6">
-                          <Button sm="6" className="mx-2"  onClick={() => cart.addOneToCart(lego.legoSetId)}>+</Button>
+                          <Button sm="6" className="mx-2"  onClick={() => cart.addOneToCart(lego)}>+</Button>
                           <Button sm="6" className="mx-2"  onClick={() => cart.removeOneFromCart(lego.legoSetId)}>-</Button>
                         </Col>
                       </Form>
                       </>:
-                      <Button variant="primary" onClick={() => cart.addOneToCart(lego.legoSetId)}>Add to Cart</Button>
+                      <Button variant="primary" onClick={() => cart.addOneToCart(lego)}>Add to Cart</Button>
                       }
                     </Card.Text>
                   </Card.Body>

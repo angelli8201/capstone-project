@@ -29,7 +29,7 @@ public class LegoSetController {
     }
 
     @GetMapping("/{setId}")
-    public ResponseEntity<LegoSet> findById(int setId){
+    public ResponseEntity<LegoSet> findById(String setId){
         LegoSet legoSet = service.findById(setId);
         if(legoSet ==null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

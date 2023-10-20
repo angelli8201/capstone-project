@@ -3,7 +3,7 @@ package learn.models;
 import java.util.Objects;
 
 public class LegoSet {
-    int legoSetId;
+    String legoSetId;
     String setName;
     int amountOfPieces;
     double price;
@@ -14,7 +14,7 @@ public class LegoSet {
     double rating;
 
     public LegoSet(){}
-    public LegoSet(int legoSetId, String setName, int amountOfPieces, double price, String ages, String imageUrl, int themeId, String description, double rating) {
+    public LegoSet(String legoSetId, String setName, int amountOfPieces, double price, String ages, String imageUrl, int themeId, String description, double rating) {
         this.legoSetId = legoSetId;
         this.setName = setName;
         this.amountOfPieces = amountOfPieces;
@@ -26,11 +26,11 @@ public class LegoSet {
         this.rating = rating;
     }
 
-    public int getLegoSetId() {
+    public String getLegoSetId() {
         return legoSetId;
     }
 
-    public void setLegoSetId(int legoSetId) {
+    public void setLegoSetId(String legoSetId) {
         this.legoSetId = legoSetId;
     }
 
@@ -103,7 +103,7 @@ public class LegoSet {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         LegoSet legoSet = (LegoSet) o;
-        return legoSetId == legoSet.legoSetId && amountOfPieces == legoSet.amountOfPieces && Double.compare(price, legoSet.price) == 0 && themeId == legoSet.themeId && rating == legoSet.rating && Objects.equals(setName, legoSet.setName) && Objects.equals(ages, legoSet.ages) && Objects.equals(imageUrl, legoSet.imageUrl) && Objects.equals(description, legoSet.description);
+        return amountOfPieces == legoSet.amountOfPieces && Double.compare(price, legoSet.price) == 0 && themeId == legoSet.themeId && Double.compare(rating, legoSet.rating) == 0 && Objects.equals(legoSetId, legoSet.legoSetId) && Objects.equals(setName, legoSet.setName) && Objects.equals(ages, legoSet.ages) && Objects.equals(imageUrl, legoSet.imageUrl) && Objects.equals(description, legoSet.description);
     }
 
     @Override

@@ -22,14 +22,14 @@ export function CartProvider({children, getSetData}){
         return amount;
     }
 
-    function addOneToCart(legoSetId){
-        const amount = getProductAmount(legoSetId);
+    function addOneToCart(lego){
+        const amount = getProductAmount(lego.legoSetId);
         if(amount === 0){
             setCartProducts(
                 [
                     ...cartProducts,
                     {
-                        legoSetId: legoSetId,
+                        ...lego,
                         amount: 1
                     }
                 ]
@@ -38,7 +38,7 @@ export function CartProvider({children, getSetData}){
         else{
             setCartProducts(
                 cartProducts.map(
-                    product => product.legoSetId === legoSetId?
+                    product => product.legoSetId === lego.legoSetId?
                     {...product, amount: product.amount + 1}
                     : product
                 )
@@ -75,7 +75,7 @@ export function CartProvider({children, getSetData}){
         let totalCost = 0 ;
         cartProducts.map((cartItem) => {
             const productData = getSetData(cartItem.legoSetId);
-            totalCost += (productData.price * cartItem.amount);
+            totalCost += (productData?.price * cartItem.amount);
         });
         return totalCost;
     }
@@ -89,6 +89,7 @@ export function CartProvider({children, getSetData}){
         removeOneFromCart,
         deleteFromCart,
         getTotalCost,
+        getSetData,
 
     }
     return(

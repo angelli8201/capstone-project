@@ -22,7 +22,7 @@ public class LegoSetJdbcTemplateRepository implements LegoSetRepository{
     }
 
     @Override
-    public LegoSet findById(int setId) {
+    public LegoSet findById(String setId) {
         final String sql = "select set_id, set_name, pieces, price,ages,image_url,set_theme_id,set_description,rating " +
                 "from legoSet " +
                 "where set_id = ?;";

@@ -46,7 +46,7 @@ function App() {
     return <p>Loading...</p>; 
   }
 
-  function getSetData(legoSetId){
+   function getSetData(legoSetId){
     let setData = legos.find(set => set.legoSetId === legoSetId);
     return setData;
   }
@@ -63,14 +63,14 @@ function App() {
   
 
   return (
-    <CartProvider getSetData={ getSetData}>
+    <CartProvider getSetData={getSetData}>
         <Router>
         <main style={containerStyle}>
         <Nav/>
         <Routes>
           <Route path = "/" element = {<Landing/>}/>
           <Route path = "/themes" element = {<Themes/>}/>
-          <Route path = "/legos" element = {<Legos legos = {legos } getSetData={getSetData}/>}/>
+          <Route path = "/legos" element = {<Legos legos = {legos} getSetData={getSetData}/>}/>
           <Route path = "/news" element = {<News/>}/>
           <Route path = "/figures" element = {<Figures/>}/>
           <Route path = "/success" element = {<Success/>}/>
