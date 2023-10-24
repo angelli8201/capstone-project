@@ -1,45 +1,39 @@
 package learn.domain;
 
-import learn.data.ThemeRepository;
-import learn.domain.ThemeService;
-import learn.models.Theme;
+import learn.data.BlogRepository;
+import learn.models.Blog;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
-
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
-class ThemeServiceTest {
+public class BlogServiceTest {
     @Autowired
-    ThemeService service;
-
+    BlogService service;
     @MockBean
-    ThemeRepository repository;
-
+    BlogRepository repository;
 
     @Test
     void shouldFindAll() {
-        List<Theme> expected = repository.findAll();
+        List<Blog> expected = repository.findAll();
         when(repository.findAll()).thenReturn(expected);
-        List<Theme> actual = service.findAll();
+        List<Blog> actual = service.findAll();
         assertNotNull(actual);
-
     }
     @Test
     void shouldFindById() {
-        Theme expected = new Theme(1,"Testing","test", "test");
+        Blog expected = new Blog(1,"Animal Crossing", "I cannot wait for the new Animal Crossing x Lego collaboration!", "legolover123",LocalDate.of(2023,10,10));
         when(repository.findById(1)).thenReturn(expected);
-        Theme actual = service.findById(1);
+        Blog actual = service.findById(1);
         assertEquals(expected,actual);
 
     }
-
 }

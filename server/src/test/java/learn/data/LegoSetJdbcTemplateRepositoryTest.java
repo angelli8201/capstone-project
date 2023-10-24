@@ -31,8 +31,8 @@ public class LegoSetJdbcTemplateRepositoryTest {
 
     @Test
     void shouldFindById1(){
-        LegoSet legoSet = new LegoSet(000,"Space Shuttle", 500, 59.99, "8-12", "space_shuttle.jpg", 1, "Explore the galaxy with this awesome space shuttle!", 4.0);
-        LegoSet actual = repository.findById(000);
+        LegoSet legoSet = new LegoSet("000","Space Shuttle", 500, 59.99, "8-12", "space_shuttle.jpg", 1, "Explore the galaxy with this awesome space shuttle!", 4.0);
+        LegoSet actual = repository.findById("000");
         assertEquals(legoSet,actual);
     }
 

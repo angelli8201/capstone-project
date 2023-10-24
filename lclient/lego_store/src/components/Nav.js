@@ -47,7 +47,7 @@ function Nav() {
                         <img src={logo} alt="Logo" style={{ width: '50px', height: '50px' }} />
                     </Link>
                 </li>
-
+                
                 <li className='nav-item'>
                     <Link style={linkStyle} className='nav-link' to='/'>
                         Home
@@ -66,6 +66,11 @@ function Nav() {
                 <li className='nav-item'>
                     <Link style={linkStyle} className='nav-link' to='/figures'>
                         Lego Mini Figures
+                    </Link>
+                </li>
+                <li className='nav-item'>
+                    <Link style={linkStyle} className='nav-link' to='/blog'>
+                        Blog
                     </Link>
                 </li>
                

@@ -29,7 +29,7 @@ function Figures() {
         <div className="container">
             <Row style={{ marginBottom: '10px' }}>
                 {figures.map(figure => (
-                    <Col key={figure.figureId} xs={12} md={4} style={{ marginBottom: '10px' }}>
+                    <Col key={figure.figureId} xs={12} md={4} style={{ marginBottom: '5px' }}>
                         <Card style={{ width: '100%', height: '80%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                             <Card.Img
                                 variant="top"

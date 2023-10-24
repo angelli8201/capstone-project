@@ -12,6 +12,7 @@ import Success from './pages/Success';
 import Cancel from './pages/Cancel';
 import CartProvider from './CartContext';
 import { useEffect,useState } from "react";
+import Blog from './pages/Blog';
 
 
 
@@ -74,6 +75,7 @@ function App() {
           <Route path = "/figures" element = {<Figures/>}/>
           <Route path = "/success" element = {<Success/>}/>
           <Route path = "/cancel" element = {<Cancel/>}/>
+          <Route path = "/blog" element = {<Blog/>}/>
         </Routes>  
         </main>
     </Router>

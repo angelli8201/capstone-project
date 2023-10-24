@@ -28,7 +28,7 @@ public class ThemeJdbcTemplateRepositoryTest {
 
     @Test
     void shouldFindById1(){
-        Theme theme = new Theme(1,"Space");
+        Theme theme = new Theme(1,"Space","test","test");
         Theme actual = repository.findById(1);
         assertEquals(theme,actual);
     }

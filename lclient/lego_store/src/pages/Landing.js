@@ -41,6 +41,12 @@ function Landing() {
             ></iframe>
              <News />
             
+
+       
+            <iframe src="https://giphy.com/embed/h2CN7TlrNWxBCyUSqk" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            <iframe src="https://giphy.com/embed/9M1ryc3kRpXlLXE0Ro" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            <iframe src="https://giphy.com/embed/CFtz69Qh8eBsrIC9kf" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+     
             </Col>
           </Row>
         </div>

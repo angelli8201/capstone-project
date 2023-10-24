@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { motion } from 'framer-motion';
 
 function Themes() {
     const [themes, setThemes] = useState([]);
@@ -29,28 +30,23 @@ function Themes() {
         <div className="container">
             <Row>
                 {themes.map(theme => (
-                    <Col key={theme.themeId} xs={12} md={4} style={{ marginBottom: '20px' }}>
-                        <Card style={{ width: '100%', height: '100%' }}>
+                    <Col key={theme.themeId} xs={12} md={4} style={{ marginBottom: '50px' }}>
+                         <motion.div
+                            whileHover={{ scale: 1.1 }} 
+                        >
+                        <Card >
                             <Card.Img variant="top" src={theme.themeUrl} />
                             <Card.Body>
                                 <Card.Title>{theme.themeName}</Card.Title>
                                 <Card.Text>{theme.themeDescription}</Card.Text>
                             </Card.Body>
                         </Card>
+                        </motion.div>
                     </Col>
                 ))}
             </Row>
         </div>
-        <div className='d-flex justify-content-center'>
-        <Row>
-        <Col>
-            <iframe src="https://giphy.com/embed/h2CN7TlrNWxBCyUSqk" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-            <iframe src="https://giphy.com/embed/9M1ryc3kRpXlLXE0Ro" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-            <iframe src="https://giphy.com/embed/CFtz69Qh8eBsrIC9kf" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-            </Col>
-        </Row>
-           
-        </div>
+   
         </>
         
     );

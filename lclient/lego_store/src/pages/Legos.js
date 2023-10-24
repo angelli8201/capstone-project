@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -6,9 +6,9 @@ import logo from "../images/icon.png";
 import age from "../images/ages.jpg";
 import star from "../images/star3.png";
 import Button from 'react-bootstrap/Button';
-import LegoCard from '../components/LegoCard';
-import { CartContext, CartProvider } from '../CartContext';
+import { CartContext } from '../CartContext';
 import { Form } from 'react-bootstrap';
+import { motion } from "framer-motion";
 
 
 function Legos({legos, getSetData}) {
@@ -45,12 +45,43 @@ function Legos({legos, getSetData}) {
                       <Form as ={Row}>
                         <Form.Label column = "true" sm="6">In Cart</Form.Label>
                         <Col sm="6">
-                          <Button sm="6" className="mx-2"  onClick={() => cart.addOneToCart(lego)}>+</Button>
-                          <Button sm="6" className="mx-2"  onClick={() => cart.removeOneFromCart(lego.legoSetId)}>-</Button>
+                        <motion.button
+                          whileHover={{ scale: 1.5 }} 
+                          className="mx-2"
+                          style={{
+                            backgroundColor: 'yellow', 
+                            borderRadius: '10px',   
+                          }}
+                          onClick={() => cart.addOneToCart(lego)}
+                        >
+                          +
+                        </motion.button>
+                        <motion.button
+                          whileHover={{ scale: 1.5 }} 
+                          className="mx-2"
+                          style={{
+                            backgroundColor: 'yellow', 
+                            borderRadius: '10px',   
+                          }}
+                          onClick={() => cart.removeOneFromCart(lego.legoSetId)}
+                        >
+                          -
+                        </motion.button>
                         </Col>
                       </Form>
                       </>:
-                      <Button variant="primary" onClick={() => cart.addOneToCart(lego)}>Add to Cart</Button>
+                      <motion.button
+                      whileHover={{ scale: 1.3 }} 
+                      className="mx-2"
+                      style={{
+                        backgroundColor: 'yellow', 
+                        borderRadius: '10px',   
+                      }}
+                      onClick={() => cart.addOneToCart(lego)}
+                    >
+                      Add to cart
+                    </motion.button>
+                     
                       }
                     </Card.Text>
                   </Card.Body>

@@ -32,9 +32,9 @@ public class LegoSetServiceTest {
     }
     @Test
     void shouldFindById() {
-        LegoSet expected = new LegoSet(1,"Testing",1,1.0,"Testing","Testing",1,"Testing",1.0 );
-        when(repository.findById(1)).thenReturn(expected);
-        LegoSet actual = service.findById(1);
+        LegoSet expected = new LegoSet("000","Testing",1,1.0,"Testing","Testing",1,"Testing",1.0 );
+        when(repository.findById("000")).thenReturn(expected);
+        LegoSet actual = service.findById("000");
         assertEquals(expected,actual);
 
     }
