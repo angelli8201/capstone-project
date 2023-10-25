@@ -133,9 +133,9 @@ function Blog() {
       </Modal>
       {blogs.map((blog) => (
         <Row key={blog.blogId} style={{ marginBottom: '20px' }}>
-          <Card style={{ width: '100%', height: '100%' }}>
+          <Card style={{ background: 'white',width: '100%', height: '100%' }}>
             <Card.Body>
-              <Card.Title style={{ fontSize: '24px' }}>{blog.title}</Card.Title>
+              <Card.Title style={{ background: 'yellow',fontSize: '35px' }}>{blog.title}</Card.Title>
               <Card.Text style={{ fontSize: '16px' }}>By: {blog.author}, {blog.datePosted}</Card.Text>
               <Card.Text style={{ fontSize: '22px' }}>{blog.description}</Card.Text>
 
