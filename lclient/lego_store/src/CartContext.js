@@ -92,6 +92,7 @@ export function CartProvider({children, getSetData}){
         getSetData,
 
     }
+    
     return(
         <CartContext.Provider value = {contextValue}>
             {children}

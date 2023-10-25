@@ -6,7 +6,6 @@ import Landing from './pages/Landing';
 import Themes from './pages/Themes';
 import Legos from './pages/Legos';
 import Figures from './pages/Figures';
-import News from './pages/News';
 import React from 'react';
 import Success from './pages/Success';
 import Cancel from './pages/Cancel';
@@ -66,18 +65,18 @@ function App() {
   return (
     <CartProvider getSetData={getSetData}>
         <Router>
-        <main style={containerStyle}>
-        <Nav/>
-        <Routes>
-          <Route path = "/" element = {<Landing/>}/>
-          <Route path = "/themes" element = {<Themes/>}/>
-          <Route path = "/legos" element = {<Legos legos = {legos} getSetData={getSetData}/>}/>
-          <Route path = "/figures" element = {<Figures/>}/>
-          <Route path = "/success" element = {<Success/>}/>
-          <Route path = "/cancel" element = {<Cancel/>}/>
-          <Route path = "/blog" element = {<Blog/>}/>
-        </Routes>  
-        </main>
+          <main style={containerStyle}>
+            <Nav/>
+            <Routes>
+              <Route path = "/" element = {<Landing/>}/>
+              <Route path = "/themes" element = {<Themes/>}/>
+              <Route path = "/legos" element = {<Legos legos = {legos}/>}/>
+              <Route path = "/figures" element = {<Figures/>}/>
+              <Route path = "/success" element = {<Success/>}/>
+              <Route path = "/cancel" element = {<Cancel/>}/>
+              <Route path = "/blog" element = {<Blog/>}/>
+            </Routes>  
+          </main>
     </Router>
     </CartProvider>
    

@@ -8,6 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -30,7 +31,7 @@ public class BlogServiceTest {
     }
     @Test
     void shouldFindById() {
-        Blog expected = new Blog(1,"Animal Crossing", "I cannot wait for the new Animal Crossing x Lego collaboration!", "legolover123",LocalDate.of(2023,10,10));
+        Blog expected = new Blog(1,"Animal Crossing", "I cannot wait for the new Animal Crossing x Lego collaboration!", "legolover123",new Date(2023,10,10));
         when(repository.findById(1)).thenReturn(expected);
         Blog actual = service.findById(1);
         assertEquals(expected,actual);

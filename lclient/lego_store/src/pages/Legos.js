@@ -5,18 +5,13 @@ import Col from 'react-bootstrap/Col';
 import logo from "../images/icon.png";
 import age from "../images/ages.jpg";
 import star from "../images/star3.png";
-import Button from 'react-bootstrap/Button';
 import { CartContext } from '../CartContext';
 import { Form } from 'react-bootstrap';
 import { motion } from "framer-motion";
 
 
-function Legos({legos, getSetData}) {
+function Legos({legos}) {
   const cart = useContext(CartContext);
-
-  
-  
-  
     return (
     
         <div className="container">
@@ -27,7 +22,7 @@ function Legos({legos, getSetData}) {
                   <Card.Img
                     variant="top"
                     src={lego.imageUrl}
-                    alt={`${lego.setName} Image`}
+                    alt= "Product Image"
                     style={{ height: '100%', objectFit: 'contain' }}
                   />
                   <Card.Body style={{ textAlign: 'center' }}>
@@ -35,9 +30,8 @@ function Legos({legos, getSetData}) {
                     <Card.Text>{lego.description}</Card.Text>
                     <Card.Text>
                       <img src={logo} alt="Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} /> {lego.amountOfPieces} 
-                      <img src={age} alt="Logo" style={{ width: '30px', height: '30px', margin: '0 10px' }} /> {lego.ages} 
-                      <img src={star} alt="Logo" style={{ width: '30px', height: '30px', marginLeft: '10px' }} />  {lego.rating}&nbsp;
-                     
+                      <img src={age} alt="Age" style={{ width: '30px', height: '30px', margin: '0 10px' }} /> {lego.ages} 
+                      <img src={star} alt="Rating" style={{ width: '30px', height: '30px', marginLeft: '10px' }} />  {lego.rating}&nbsp;
                     </Card.Text>
                     <Card.Text>
                     {cart.getProductAmount(lego.legoSetId) > 0 ?

@@ -9,7 +9,7 @@ import CartProducts from './CartProducts';
 
 function Nav() {
     const linkStyle = {
-        fontSize: '24px',   
+        fontSize: '26px',   
         color: 'black',     
         textDecoration: 'none',  
         marginRight: '20px',
@@ -41,7 +41,6 @@ function Nav() {
     return (
         <div className="d-flex justify-content-around">
             <ul className="nav my-4">
-                
                 <li className='nav-item'>
                     <Link className='nav-link' to='/'>
                         <img src={logo} alt="Logo" style={{ width: '50px', height: '50px' }} />
@@ -104,7 +103,7 @@ function Nav() {
                     :
                     <h1>Your shopping cart is empty!</h1>
                     }
-                    </Modal.Body>
+                </Modal.Body>
             </Modal>
         </div>
     );

@@ -8,6 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -41,7 +42,7 @@ public class BlogJdbcTemplateRepositoryTest {
         blog.setTitle("Potato");
         blog.setDescription("Test Description");
         blog.setAuthor("Test author");
-        blog.setDatePosted(LocalDate.of(2023,10,23));
+        blog.setDatePosted(new Date(2023,10,23));
         blog.setBlogId(4);
 
         Blog actual = repository.add(blog);
@@ -53,7 +54,7 @@ public class BlogJdbcTemplateRepositoryTest {
         Blog blog = new Blog();
         blog.setBlogId(1);
         blog.setDescription("testing");
-        blog.setDatePosted(LocalDate.of(2023,10,10));
+        blog.setDatePosted( new Date(2023,10,10));
         blog.setAuthor("testing");
         blog.setTitle("Different title");
         assertTrue(repository.update(blog));

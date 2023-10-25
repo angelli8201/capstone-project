@@ -29,7 +29,7 @@ function News() {
             {news.map(newsPost => (
             <Row key={newsPost.postId} style={{ marginBottom: '20px', background: 'yellow'}}>
                     <Col >
-                        <Card style={{ width: '100%', height: '100%', fontSize: 24 }}>
+                        <Card style={{ width: '100%', height: '100%', fontSize: 24, padding: '20px' }}>
                             <Card.Body>
                                 <Card.Title style={{fontSize: 36 }}>{newsPost.title}</Card.Title>
                                 <Card.Subtitle className="mb-2 text-muted">{newsPost.datePosted}</Card.Subtitle>
