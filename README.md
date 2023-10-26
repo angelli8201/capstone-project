@@ -61,8 +61,30 @@ Thursday
 -complete cart summary process (1.5 hour)
 
 Friday
--look into react stripe and implement it for payment page. mimic checkout process (1.5 hours)
--look into framer motion and add react animations to pages (4 hours)
+-look into react stripe and implement it for payment page. mimic checkout process (3 hours)
+-create product listings on stripe (1.5hour)
+-create server to handle payment requests (1.5hour)
+
+
+
+Monday
+-look into framer motion and add react animations to pages (3 hours)
+-add blogs section (2 hours)
+-add comment feature (1 hour)
+
+Tuesday
+-clean up clode (2 hours)
+-populate database more and stripe product listings more(2hours)
+-edit blogs section logic (2 hours)
+
+Wednesday
+-clean up code (2hours)
+-add framer motion animations on buttons/ cards (1hour)
+-edit ui (2 hours)
+
+Thursday 
+-make presentation (2 hours)
+-practice presentation
 
 
 
