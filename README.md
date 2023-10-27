@@ -87,6 +87,13 @@ Thursday
 -practice presentation
 
 
-
+1. Open the command line terminal.
+2. Navigate to the server directory, then the sql directory, and then run the two MySQL schemas: 
+lego_production_schema.sql and lego_test_schema.sql
+3. Go to the server directory and navigate through the following directories: src -> main -> java -> learn. Finally, run App.java 
+4. Open a new command line terminal.
+5. Navigate to the client directory and then to the lego_store directory and start the client application with “npm start”
+6. Open a new command line terminal
+7. Navigate to the client directory and start the second client application with “npm start”
 
 
